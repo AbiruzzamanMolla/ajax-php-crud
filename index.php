@@ -140,7 +140,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form method="post" class="form-group" id="form1">
+          <form method="post" action="bend/edit.php" class="form-group" id="form2">
             <div class="form-row">
               <div class="col">
                 <label for="fname">First Name</label>
@@ -177,7 +177,7 @@
             <div class="form-row">
               <div class="col">
                 <label for="edu">Education</label>
-                <input type="text" name="education" id="edu" class="form-control">
+                <input type="text" name="education" id="education" class="form-control">
               </div>
             </div>
             <div class="form-row">
@@ -190,6 +190,7 @@
               <div class="col">
                 <label for="bio">Bio</label>
                 <input type="text" name="bio" id="bio" class="form-control">
+                <input type="hidden" name="id" id="id">
               </div>
             </div>
             <div class="row">
@@ -207,21 +208,87 @@
   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
+        <div class="modal-body">
+          <h3>Are you Sure?</h3>
+          <form method="post" class="form-group" id="form3">
+            <div class="row">
+              <div class="col pt-4">
+                <input type="submit" value="Delete" name="submit" id="createData" class="btn btn-danger btn-lg btn-block">
+              </div>
+            </div>
+          </form>
+          <button type="button" class="btn btn-secondary btn-lg btn-block" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal  view-->
+  <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="deleteModalLabel">Edit Data</h5>
+          <h5 class="modal-title">View Data</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <form method="post" class="form-group" id="form1">
-
-            <div class="row">
-              <div class="col pt-4">
-                <input type="submit" value="submit" name="submit" id="createData" class="btn btn-success btn-lg btn-block">
-              </div>
+          <div class="form-row">
+            <div class="col">
+              <label for="fname">First Name</label>
+              <b id="fname" class="showdata"></b>
             </div>
-          </form>
+            <div class="col">
+              <label for="lname">Last Name</label>
+              <b id="lname" class="showdata"></b>
+            </div>
+          </div>
+          <span id="wfname"></span>
+          <div class="form-row">
+            <div class="col">
+              <label for="email">Email Address</label>
+              <b id="email" class="showdata">
+                <p></p>
+              </b>
+            </div>
+          </div>
+          <span id="wemail"></span>
+          <div class="row">
+            <label for="gender" class="col pt-3">Gender</label>
+            <b id="gender"></b>
+          </div>
+          <div class="row pt-2">
+            <div class="col pt-2">
+              <label for="dob">Date of Birth</label>
+            </div>
+            <div class="col pt-2">
+              <b id="dob"></b>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <label for="edu">Education</label>
+              <b id="edu"></b>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <label for="address">Address</label>
+              <b id="address"></b>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <label for="bio">Bio</label>
+              <b id="bio"></b>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save</button>
         </div>
       </div>
     </div>
