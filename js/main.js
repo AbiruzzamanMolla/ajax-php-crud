@@ -124,5 +124,3 @@ function loadData(){
         }
     });
 }
-
-// Alert auto close
