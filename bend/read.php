@@ -1,5 +1,5 @@
 <?php
-require_once('func.php');
+require_once('functions/func.php');
 
 view_data();
 

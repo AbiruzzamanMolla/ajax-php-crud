@@ -87,7 +87,7 @@ function loadData() {
     });
 }
 
-// getting data form input form of create data
+// getting data from input form of create data
 $(document).ready(function () {
     $('#form1').on('submit', function (e) {
         e.preventDefault();
@@ -136,7 +136,6 @@ function createData(data) {
     });
 }
 
-
 // checking table click data to purform delete or edit or vide action
 $(function () {
     $('table').on('click', function (e) {
@@ -177,8 +176,15 @@ function getData(id) {
                 form.find('#fname').val(responce[0].fname);
                 form.find('#lname').val(responce[0].lname);
                 form.find('#email').val(responce[0].email);
-                form.find('#gender').val(responce[0].gender);
-                form.find('#dob').val(responce[0].dob);
+                // checking gender to make chacked
+                var g = form.find('#gender');
+                if(responce[0].gender == 'male'){
+                    g.filter("[value='male']").attr('checked', true);
+                } else if (responce[0].gender == 'female'){
+                    g.filter("[value='female']").attr('checked', true);
+                } else {
+                    g.filter("[value='other']").attr('checked', true);
+                }
                 form.find('#dob').val(responce[0].dob);
                 form.find('#education').val(responce[0].education);
                 form.find('#address').val(responce[0].address);
@@ -224,8 +230,16 @@ function updateData(data) {
 $(document).ready(function () {
     $('#form2').on('submit', function (e) {
         e.preventDefault();
+        var form = $("#form2");
         var data = $("#form2").serialize();
-        updateData(data);
+        if (validate(form)) {
+            updateData(data);
+        } else {
+            var alert = $('#alert3');
+            alert.addClass('alert');
+            alert.addClass('alert-warning');
+            alert.html('Please fill all form!');
+        }
     });
 });
 
@@ -296,7 +310,7 @@ function viewData(id) {
                 modal.find('#email').html(responce[0].email);
                 modal.find('#gender').html(responce[0].gender);
                 modal.find('#dob').html(responce[0].dob);
-                modal.find('#edu').html(responce[0].edu);
+                modal.find('#education').html(responce[0].education);
                 modal.find('#address').html(responce[0].address);
                 modal.find('#bio').html(responce[0].bio);
             }

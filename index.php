@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>CRUD Operation - ITLogiko</title>
+  <title>AJAX CRUD Operation - ITLogiko</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -140,6 +140,7 @@
           </button>
         </div>
         <div class="modal-body">
+          <div class="" id="alert3"></div>
           <form method="post" action="bend/edit.php" class="form-group" id="form2">
             <div class="form-row">
               <div class="col">
@@ -161,10 +162,10 @@
             <span id="wemail"></span>
             <div class="row">
               <label for="gender" class="col pt-3">Gender</label>
-              <div class="col pt-3"><input type="radio" name="gender" value="male" id="gender" checked> Male
+              <div class="col pt-3"><input type="radio" name="gender" value="male" id="gender"> Male
               </div>
-              <div class="col pt-3"><input type="radio" name="gender" value="female" id="genderF"> Female</div>
-              <div class="col pt-3"><input type="radio" name="gender" value="gender" id="genderO"> Others</div>
+              <div class="col pt-3"><input type="radio" name="gender" value="female" id="gender"> Female</div>
+              <div class="col pt-3"><input type="radio" name="gender" value="other" id="gender"> Others</div>
             </div>
             <div class="row pt-2">
               <div class="col pt-2">
@@ -235,60 +236,77 @@
           </button>
         </div>
         <div class="modal-body">
-          <div class="form-row">
-            <div class="col">
-              <label for="fname">First Name</label>
-              <b id="fname" class="showdata"></b>
-            </div>
-            <div class="col">
-              <label for="lname">Last Name</label>
-              <b id="lname" class="showdata"></b>
-            </div>
-          </div>
-          <span id="wfname"></span>
-          <div class="form-row">
-            <div class="col">
-              <label for="email">Email Address</label>
-              <b id="email" class="showdata">
-                <p></p>
-              </b>
-            </div>
-          </div>
-          <span id="wemail"></span>
-          <div class="row">
-            <label for="gender" class="col pt-3">Gender</label>
-            <b id="gender"></b>
-          </div>
-          <div class="row pt-2">
-            <div class="col pt-2">
-              <label for="dob">Date of Birth</label>
-            </div>
-            <div class="col pt-2">
-              <b id="dob"></b>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col">
-              <label for="edu">Education</label>
-              <b id="edu"></b>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col">
-              <label for="address">Address</label>
-              <b id="address"></b>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col">
-              <label for="bio">Bio</label>
-              <b id="bio"></b>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save</button>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  First Name
+                </td>
+                <td>
+                   : 
+                </td>
+                <td>
+                  <b id="fname" class="showdata"></b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Last Name
+                </td><td> : </td>
+                <td>
+                  <b id="lname" class="showdata"></b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Email Address
+                </td><td> : </td>
+                <td>
+                  <b id="email" class="showdata">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Gender
+                </td><td> : </td>
+                <td>
+                  <b id="gender"></b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Date of Birth
+                </td><td> : </td>
+                <td>
+                  <b id="dob"></b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Education
+                </td><td> : </td>
+                <td>
+                  <b id="education"></b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Address
+                </td><td> : </td>
+                <td>
+                  <b id="address"></b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Bio
+                </td><td> : </td>
+                <td>
+                  <b id="bio"></b>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

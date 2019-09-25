@@ -1,6 +1,6 @@
 <?php
 
-include_once "db.php";
+include_once "database/db.php";
 // getting all data
 function view_data(){
     $con = connection();

@@ -1,4 +1,6 @@
 <?php
-require_once('func.php');
+require_once('functions/func.php');
 
 editData($_POST);
+
+?>
