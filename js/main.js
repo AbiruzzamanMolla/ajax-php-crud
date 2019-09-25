@@ -69,6 +69,7 @@ function passVal() {
 
 }
 
+// adding  
 // loading data to index page
 $(document).ready(function () {
     loadData();
@@ -91,8 +92,16 @@ function loadData() {
 $(document).ready(function () {
     $('#form1').on('submit', function (e) {
         e.preventDefault();
+        var form = $("#form1");
         var data = $("#form1").serialize();
-        createData(data);
+        if(validate(form)){
+            createData(data);
+        } else {
+            var alert = $('#alert2');
+            alert.addClass('alert');
+            alert.addClass('alert-warning');
+            alert.html('Please fill all form!');
+        }
     });
 });
 
@@ -117,14 +126,13 @@ function createData(data) {
                     $("#alert").slideUp(500);
                 });
             } else {
-                var alert = $('#alert');
-                alert.addClass('alert');
-                alert.addClass('alert-danger');
-                alert.html(responce.message);
+                var dalert = $('#alert');
+                dalert.addClass('alert');
+                dalert.addClass('alert-danger');
+                dalert.html(responce.message);
             }
             // loading data
             loadData();
-            console.log(responce);
         }
     });
 }
@@ -141,10 +149,15 @@ $(function () {
         }
         var dTag = $(e.target).parent('#delete');
         var dId = dTag.attr('data-id');
-        deleteData(dId);
+        if (dTag.hasClass('delete')) {
+            deleteData(dId);
+        }
+        
         var vTag = $(e.target).parent('#view');
         var vId = vTag.attr('data-id');
-        viewData(vId);
+        if (vTag.hasClass('view')) {
+            viewData(vId);
+        }
     });
 });
 // getting data to show
@@ -156,11 +169,11 @@ function getData(id) {
             id: id
         },
         success: function (responce) {
-            responce = $.parseJSON(responce);
+            // responce = $.parseJSON(responce);
+            responce = JSON.parse(responce);
             if (responce.status == 'success') {
                 var modal = $('#editModal');
                 var form = modal.find('#form2');
-
                 form.find('#id').val(responce[0].id);
                 form.find('#fname').val(responce[0].fname);
                 form.find('#lname').val(responce[0].lname);
@@ -171,7 +184,6 @@ function getData(id) {
                 form.find('#education').val(responce[0].education);
                 form.find('#address').val(responce[0].address);
                 form.find('#bio').val(responce[0].bio);
-
             }
 
         }
@@ -199,10 +211,10 @@ function updateData(data) {
                     $("#alert").slideUp(500);
                 });
             } else {
-                var alert = $('#alert');
-                alert.addClass('alert');
-                alert.addClass('alert-danger');
-                alert.html(responce.message);
+                var walert = $('#alert');
+                walert.addClass('alert');
+                walert.addClass('alert-danger');
+                walert.html(responce.message);
             }
             // loading data
             loadData();
@@ -220,6 +232,7 @@ $(document).ready(function () {
 
 // delete function load
 function deleteData(id) {
+    debugger
     $('#form3').on('submit', function (e) {
         e.preventDefault();
 
@@ -245,10 +258,10 @@ function deleteData(id) {
                         $("#alert").slideUp(500);
                     });
                 } else {
-                    var alert = $('#alert');
-                    alert.addClass('alert');
-                    alert.addClass('alert-warning');
-                    alert.html(responce.message);
+                    var dlalert = $('#alert');
+                    dlalert.addClass('alert');
+                    dlalert.addClass('alert-warning');
+                    dlalert.html(responce.message);
                 }
                 // loading data
                 loadData();
@@ -256,18 +269,10 @@ function deleteData(id) {
         });
     });
 }
-// hide modal
 
-function modalHide() {
-    $('.modal').each(function () {
-        e.preventDefault();
-        $(this).modal('hide');
-    });
-}
 
-// view data 
 
-// getting data to show
+// function to show data in view modal
 function viewData(id) {
     $.ajax({
         url: 'bend/getData.php',
@@ -293,3 +298,4 @@ function viewData(id) {
         }
     });
 }
+

@@ -50,7 +50,7 @@
           </button>
         </div>
         <div class="modal-body">
-
+          <div class="" id="alert2"></div>
           <form method="post" action="bend/add.php" class="form-group add-form" id="form1">
             <div class="form-row">
               <div class="col">
@@ -93,7 +93,7 @@
                 <label for="dob">Date of Birth</label>
               </div>
               <div class="col pt-2">
-                <input type="date" name="dob" id="dob" class="form-control" onchange="checkForm()">
+                <input type="date" name="dob" id="dob" class="form-control">
               </div>
             </div>
             <div class="form-row">

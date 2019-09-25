@@ -10,8 +10,7 @@
 	* Radio #done
 	* Datetime #done
 	* Checkbox #done
-- Use JavaScript or jQuery for forms validation 
-
+- Use JavaScript or jQuery for forms validation  #done
 - Use AJAX for data insert, update and delete #done
 - Use Bootstrap for UI #done
 - Use PHP as server side language #done
