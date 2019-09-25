@@ -69,7 +69,6 @@ function passVal() {
 
 }
 
-// adding  
 // loading data to index page
 $(document).ready(function () {
     loadData();
@@ -126,10 +125,10 @@ function createData(data) {
                     $("#alert").slideUp(500);
                 });
             } else {
-                var dalert = $('#alert');
-                dalert.addClass('alert');
-                dalert.addClass('alert-danger');
-                dalert.html(responce.message);
+                var alert = $('#alert');
+                alert.addClass('alert');
+                alert.addClass('alert-danger');
+                alert.html(responce.message);
             }
             // loading data
             loadData();
@@ -211,10 +210,10 @@ function updateData(data) {
                     $("#alert").slideUp(500);
                 });
             } else {
-                var walert = $('#alert');
-                walert.addClass('alert');
-                walert.addClass('alert-danger');
-                walert.html(responce.message);
+                var alert = $('#alert');
+                alert.addClass('alert');
+                alert.addClass('alert-danger');
+                alert.html(responce.message);
             }
             // loading data
             loadData();
@@ -232,7 +231,6 @@ $(document).ready(function () {
 
 // delete function load
 function deleteData(id) {
-    debugger
     $('#form3').on('submit', function (e) {
         e.preventDefault();
 
@@ -258,10 +256,10 @@ function deleteData(id) {
                         $("#alert").slideUp(500);
                     });
                 } else {
-                    var dlalert = $('#alert');
-                    dlalert.addClass('alert');
-                    dlalert.addClass('alert-warning');
-                    dlalert.html(responce.message);
+                    var alert = $('#alert');
+                    alert.addClass('alert');
+                    alert.addClass('alert-warning');
+                    alert.html(responce.message);
                 }
                 // loading data
                 loadData();
@@ -269,10 +267,18 @@ function deleteData(id) {
         });
     });
 }
+// hide modal
 
+function modalHide() {
+    $('.modal').each(function () {
+        e.preventDefault();
+        $(this).modal('hide');
+    });
+}
 
+// view data 
 
-// function to show data in view modal
+// getting data to show
 function viewData(id) {
     $.ajax({
         url: 'bend/getData.php',
@@ -298,4 +304,13 @@ function viewData(id) {
         }
     });
 }
-
+// form validation check
+function validate(form){
+    var inputTag = form.find('input');
+    for(var i = 0; i< inputTag.length; i++){
+        if(inputTag[i].value == '' || inputTag[i].value == null){
+            return false;
+        }
+    }
+    return true;
+}

@@ -40,8 +40,8 @@
 
 
   <!-- Create Modal -->
-  <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+  <div class="modal fade bd-example-modal-lg" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="createModalLabel">Create Data</h5>
@@ -130,8 +130,8 @@
 
 
   <!-- Edit Modal -->
-  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+  <div class="modal fade bd-example-modal-lg" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="editModalLabel">Edit Data</h5>
@@ -144,18 +144,18 @@
             <div class="form-row">
               <div class="col">
                 <label for="fname">First Name</label>
-                <input type="text" name="fname" id="fname" value="" class="form-control" onblur="nameCheck()">
+                <input type="text" name="fname" id="fname" value="" class="form-control">
               </div>
               <div class="col">
                 <label for="lname">Last Name</label>
-                <input type="text" name="lname" id="lname" value="" class="form-control" onblur="nameCheck()">
+                <input type="text" name="lname" id="lname" value="" class="form-control">
               </div>
             </div>
             <span id="wfname"></span>
             <div class="form-row">
               <div class="col">
                 <label for="email">Email Address</label>
-                <input type="email" name="email" id="email" class="form-control" onblur="validateemail()" required>
+                <input type="email" name="email" id="email" class="form-control" required>
               </div>
             </div>
             <span id="wemail"></span>
@@ -171,7 +171,7 @@
                 <label for="dob">Date of Birth</label>
               </div>
               <div class="col pt-2">
-                <input type="date" name="dob" id="dob" class="form-control" onchange="checkForm()">
+                <input type="date" name="dob" id="dob" class="form-control">
               </div>
             </div>
             <div class="form-row">
@@ -205,8 +205,8 @@
   </div>
 
   <!-- Delete Modal -->
-  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+  <div class="modal fade bd-example-modal-sm" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-body">
           <h3>Are you Sure?</h3>
@@ -225,8 +225,8 @@
 
 
   <!-- Modal  view-->
-  <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+  <div class="modal fade bd-example-modal-lg" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">View Data</h5>
